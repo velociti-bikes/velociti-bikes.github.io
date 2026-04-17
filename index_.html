@@ -1,0 +1,161 @@
+// Velociti Bikes Fullstack App (Node.js + Express + SQLite)
+// Run: npm init -y && npm install express sqlite3 jsonwebtoken bcryptjs cors
+
+const express = require('express');
+const sqlite3 = require('sqlite3').verbose();
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+const cors = require('cors');
+
+const app = express();
+app.use(express.json());
+app.use(cors());
+
+const SECRET = "velociti_secret_key";
+
+// Database setup
+const db = new sqlite3.Database('./velociti.db');
+
+db.serialize(() => {
+  db.run(`CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT UNIQUE,
+    password TEXT,
+    role TEXT
+  )`);
+
+  db.run(`CREATE TABLE IF NOT EXISTS tickets (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    email TEXT,
+    bike TEXT,
+    issue TEXT,
+    status TEXT DEFAULT 'Open'
+  )`);
+
+  db.run(`CREATE TABLE IF NOT EXISTS customers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    email TEXT,
+    notes TEXT
+  )`);
+});
+
+// Middleware
+function auth(req, res, next) {
+  const token = req.headers['authorization'];
+  if (!token) return res.sendStatus(403);
+  jwt.verify(token, SECRET, (err, user) => {
+    if (err) return res.sendStatus(403);
+    req.user = user;
+    next();
+  });
+}
+
+// Auth Routes
+app.post('/register', async (req, res) => {
+  const { email, password } = req.body;
+  const hashed = await bcrypt.hash(password, 8);
+  db.run("INSERT INTO users (email, password, role) VALUES (?, ?, ?)",
+    [email, hashed, 'staff'],
+    function(err) {
+      if (err) return res.status(400).send(err.message);
+      res.send("User created");
+    });
+});
+
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  db.get("SELECT * FROM users WHERE email = ?", [email], async (err, user) => {
+    if (!user) return res.status(400).send("User not found");
+    const valid = await bcrypt.compare(password, user.password);
+    if (!valid) return res.status(403).send("Invalid password");
+
+    const token = jwt.sign({ id: user.id, email: user.email }, SECRET);
+    res.json({ token });
+  });
+});
+
+// Ticket Routes
+app.post('/tickets', (req, res) => {
+  const { name, email, bike, issue } = req.body;
+  db.run("INSERT INTO tickets (name, email, bike, issue) VALUES (?, ?, ?, ?)",
+    [name, email, bike, issue],
+    function(err) {
+      if (err) return res.status(400).send(err.message);
+      res.send({ id: this.lastID });
+    });
+});
+
+app.get('/tickets', auth, (req, res) => {
+  db.all("SELECT * FROM tickets", [], (err, rows) => {
+    res.json(rows);
+  });
+});
+
+app.put('/tickets/:id', auth, (req, res) => {
+  const { status } = req.body;
+  db.run("UPDATE tickets SET status = ? WHERE id = ?",
+    [status, req.params.id],
+    function(err) {
+      if (err) return res.status(400).send(err.message);
+      res.send("Updated");
+    });
+});
+
+// CRM Routes
+app.post('/customers', auth, (req, res) => {
+  const { name, email, notes } = req.body;
+  db.run("INSERT INTO customers (name, email, notes) VALUES (?, ?, ?)",
+    [name, email, notes],
+    function(err) {
+      if (err) return res.status(400).send(err.message);
+      res.send({ id: this.lastID });
+    });
+});
+
+app.get('/customers', auth, (req, res) => {
+  db.all("SELECT * FROM customers", [], (err, rows) => {
+    res.json(rows);
+  });
+});
+
+// Simple frontend
+app.get('/', (req, res) => {
+  res.send(`
+  <html>
+  <head>
+    <title>Velociti Bikes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="p-10">
+    <h1 class="text-3xl font-bold mb-4">Velociti Bikes System</h1>
+
+    <h2 class="text-xl font-bold">Submit Repair Ticket</h2>
+    <input id="name" placeholder="Name" class="border p-2"><br>
+    <input id="email" placeholder="Email" class="border p-2"><br>
+    <input id="bike" placeholder="Bike" class="border p-2"><br>
+    <textarea id="issue" placeholder="Issue" class="border p-2"></textarea><br>
+    <button onclick="submitTicket()" class="bg-black text-white p-2">Submit</button>
+
+    <script>
+      async function submitTicket() {
+        await fetch('/tickets', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({
+            name: name.value,
+            email: email.value,
+            bike: bike.value,
+            issue: issue.value
+          })
+        });
+        alert('Ticket submitted');
+      }
+    </script>
+  </body>
+  </html>
+  `);
+});
+
+app.listen(3000, () => console.log("Server running on http://localhost:3000"));
