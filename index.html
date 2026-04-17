@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velociti Bikes | Premium MTB & Professional Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1532298229144-0ee0c975fe32?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <nav class="sticky top-0 z-50 bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold tracking-tighter text-blue-600">VELOCITI<span class="text-gray-900">BIKES</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 font-medium">
+                    <a href="#bikes" class="hover:text-blue-600 transition">Bikes</a>
+                    <a href="#service" class="hover:text-blue-600 transition">Repair Center</a>
+                    <a href="#portal" class="hover:text-blue-600 transition">Service Status</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#contact" class="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition">Book a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-gradient h-[80vh] flex items-center justify-center text-center text-white px-4">
+        <div class="max-w-3xl">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Elevate Your Ride.</h1>
+            <p class="text-xl md:text-2xl mb-8 font-light">Premium mountain bikes and world-class technical service for the serious rider.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#bikes" class="bg-white text-gray-900 px-8 py-4 rounded-md font-bold hover:bg-gray-100 transition">Shop MTB Collection</a>
+                <a href="#service" class="bg-blue-600 text-white px-8 py-4 rounded-md font-bold hover:bg-blue-700 transition">Schedule Professional Service</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="bikes" class="py-20 max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 class="text-3xl font-bold">The Elite Lineup</h2>
+                <p class="text-gray-600">Hand-picked performance machines.</p>
+            </div>
+            <a href="#" class="text-blue-600 font-semibold underline">View All Models</a>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition">
+                <img src="https://images.unsplash.com/photo-1576433734880-9a5732228e72?auto=format&fit=crop&w=800&q=80" alt="Enduro Bike" class="h-64 w-full object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Velociti Apex Carbon</h3>
+                    <p class="text-gray-500 mb-4 text-sm">Full-suspension Enduro beast with wireless shifting.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold">$6,499</span>
+                        <button onclick="openLeadModal('Apex Carbon')" class="bg-gray-900 text-white px-4 py-2 rounded text-sm font-semibold">Inquire Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition">
+                <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=800&q=80" alt="Trail Bike" class="h-64 w-full object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Trailblazer Pro</h3>
+                    <p class="text-gray-500 mb-4 text-sm">The ultimate all-rounder for cross-country exploration.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold">$4,200</span>
+                        <button onclick="openLeadModal('Trailblazer Pro')" class="bg-gray-900 text-white px-4 py-2 rounded text-sm font-semibold">Inquire Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition">
+                <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80" alt="Downhill Bike" class="h-64 w-full object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Summit DH-9</h3>
+                    <p class="text-gray-500 mb-4 text-sm">Professional grade downhill machine for podium finishes.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold">$7,850</span>
+                        <button onclick="openLeadModal('Summit DH-9')" class="bg-gray-900 text-white px-4 py-2 rounded text-sm font-semibold">Inquire Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="service" class="bg-gray-900 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6">Expert Repair & Maintenance</h2>
+                <p class="text-gray-400 mb-8 leading-relaxed">Stop the email back-and-forth. Our professional mechanics use a specialized intake system to ensure your bike is back on the trail faster.</p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> Certified Suspension Tuning</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> Electronic Drivetrain Diagnostics</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> Real-time SLA & Status Tracking</li>
+                </ul>
+            </div>
+            <div class="bg-white text-gray-900 p-8 rounded-2xl shadow-2xl">
+                <h3 class="text-2xl font-bold mb-6">Book Service Ticket</h3>
+                <form class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" placeholder="First Name" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                        <input type="text" placeholder="Last Name" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <select class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                        <option>Select Issue Type</option>
+                        <option>Suspension Overhaul (Critical)</option>
+                        <option>Drivetrain Adjustment</option>
+                        <option>Brake Bleed/Service</option>
+                        <option>General Safety Check</option>
+                    </select>
+                    <textarea placeholder="Describe the issue..." class="w-full p-3 border rounded-lg h-32"></textarea>
+                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition">Generate Service Ticket</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="portal" class="py-20 max-w-5xl mx-auto px-4 text-center">
+        <div class="bg-blue-50 border-2 border-dashed border-blue-200 p-12 rounded-3xl">
+            <h2 class="text-3xl font-bold mb-4">Check Your Service Status</h2>
+            <p class="text-gray-600 mb-8">Enter your Ticket ID or Phone Number to see your bike's real-time position in our repair queue.</p>
+            <div class="flex max-w-md mx-auto">
+                <input type="text" placeholder="Ticket # (e.g. VB-9921)" class="flex-grow p-4 rounded-l-lg border-y border-l focus:outline-none">
+                <button class="bg-gray-900 text-white px-8 rounded-r-lg font-bold hover:bg-black transition">Track</button>
+            </div>
+            <p class="mt-4 text-sm text-gray-500 italic">Reduces inbound calls by 40%.</p>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t py-12">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8">
+            <div class="col-span-2">
+                <span class="text-xl font-bold text-blue-600">VELOCITI BIKES</span>
+                <p class="mt-4 text-gray-500 max-w-xs">Premium mountain bike retail and service center. Specialized in high-performance racing and technical repairs.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Shop</h4>
+                <ul class="text-gray-500 space-y-2">
+                    <li>Mountain Bikes</li>
+                    <li>E-Bikes</li>
+                    <li>Components</li>
+                    <li>Apparel</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Location</h4>
+                <p class="text-gray-500">123 Trailhead Way<br>Mountain View, CA 94043</p>
+                <p class="mt-4 font-bold text-blue-600">Open Mon-Sat: 9am - 6pm</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="leadModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-[100] p-4">
+        <div class="bg-white max-w-md w-full p-8 rounded-2xl relative">
+            <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button>
+            <h3 class="text-2xl font-bold mb-2">Request Information</h3>
+            <p id="modalBikeName" class="text-blue-600 font-semibold mb-6"></p>
+            <form class="space-y-4">
+                <input type="email" placeholder="Your Email Address" class="w-full p-3 border rounded-lg">
+                <input type="tel" placeholder="Phone Number" class="w-full p-3 border rounded-lg">
+                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg">Send Inquiry to Sales Team</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openLeadModal(bikeName) {
+            document.getElementById('modalBikeName').innerText = "Inquiring about: " + bikeName;
+            document.getElementById('leadModal').style.display = 'flex';
+        }
+        function closeLeadModal() {
+            document.getElementById('leadModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
