@@ -161,10 +161,15 @@
             <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button>
             <h3 class="text-2xl font-bold mb-2">Request Information</h3>
             <p id="modalBikeName" class="text-blue-600 font-semibold mb-6"></p>
-            <form class="space-y-4">
-                <input type="email" placeholder="Your Email Address" class="w-full p-3 border rounded-lg">
-                <input type="tel" placeholder="Phone Number" class="w-full p-3 border rounded-lg">
-                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg">Send Inquiry to Sales Team</button>
+             <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgK00000O89jR" method="POST">
+                <input type="hidden" name="oid" value="00DgK00000O89jRE">
+                <input type="hidden" name="retURL" value="https://velociti-bikes.github.io/">
+                <input id="first_name" name="first_name" type="text" placeholder="First Name" required class="...">
+                <input id="last_name" name="last_name" type="text" placeholder="Last Name" required class="...">
+                <input id="email" name="email" type="email" placeholder="Email" required class="...">
+                   <!-- Custom Field for Bike Model (Requires creating a Custom Field in Salesforce first) -->
+                <input id="00N8000000XXXXX" name="00N8000000XXXXX" type="hidden" value="Apex Carbon">
+                <button type="submit">Send to Sales Team</button>
             </form>
         </div>
     </div>
