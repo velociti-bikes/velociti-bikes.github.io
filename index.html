@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Velociti Bikes | Premium MTB & Professional Service</title>
     
-    <!-- Scripts for Salesforce & reCAPTCHA -->    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .hero-gradient { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1532298229144-0ee0c975fe32?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; }
+        .parallax-section { background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-white border-b border-gray-200">
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex items-center">
@@ -25,6 +25,7 @@
                 </div>
                 <div class="hidden md:flex space-x-8 font-medium">
                     <a href="#bikes" class="hover:text-blue-600 transition">Bikes</a>
+                    <a href="#craft" class="hover:text-blue-600 transition">The Craft</a>
                     <a href="#service" class="hover:text-blue-600 transition">Repair Center</a>
                     <a href="#portal" class="hover:text-blue-600 transition">Service Status</a>
                 </div>
@@ -48,47 +49,50 @@
     </header>
 
     <!-- Bikes Section -->
-    <section id="bikes" class="py-20 max-w-7xl mx-auto px-4">
-        <div class="flex justify-between items-end mb-12">
-            <div>
-                <h2 class="text-3xl font-bold">The Elite Lineup</h2>
-                <p class="text-gray-600">Hand-picked performance machines.</p>
-            </div>
-            <a href="#" class="text-blue-600 font-semibold underline">View All Models</a>
+    <section id="bikes" class="py-24 max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">The Elite Lineup</h2>
+            <p class="text-gray-500 max-w-xl mx-auto">Engineered for the podium. Hand-picked performance machines for those who demand the best.</p>
         </div>
         
         <div class="grid md:grid-cols-3 gap-8">
             <!-- Bike 1 -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition">
-                <img src="https://images.unsplash.com/photo-1576433734880-9a5732228e72?auto=format&fit=crop&w=800&q=80" alt="Trail Bike" class="h-64 w-full object-cover">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all group">
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1576433734880-9a5732228e72?auto=format&fit=crop&w=800&q=80" class="h-64 w-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold mb-2">Velociti Apex Carbon</h3>
                     <p class="text-gray-500 mb-4 text-sm">Full-suspension Enduro beast with wireless shifting.</p>
-                    <div class="flex justify-between items-center">
+                    <div class="flex justify-between items-center pt-4 border-t border-gray-50">
                         <span class="text-2xl font-bold">$6,499</span>
                         <button onclick="openLeadModal('Apex Carbon')" class="bg-gray-900 text-white px-4 py-2 rounded text-sm font-semibold">Inquire Now</button>
                     </div>
                 </div>
             </div>
             <!-- Bike 2 -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition">
-                <img src="https://images.unsplash.com/photo-1596738141905-51e94b519d69?auto=format&fit=crop&w=800&q=80" alt="Trail Bike" class="h-64 w-full object-cover">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all group">
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1596738141905-51e94b519d69?auto=format&fit=crop&w=800&q=80" class="h-64 w-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold mb-2">Trailblazer Pro</h3>
                     <p class="text-gray-500 mb-4 text-sm">The ultimate all-rounder for cross-country exploration.</p>
-                    <div class="flex justify-between items-center">
+                    <div class="flex justify-between items-center pt-4 border-t border-gray-50">
                         <span class="text-2xl font-bold">$4,200</span>
                         <button onclick="openLeadModal('Trailblazer Pro')" class="bg-gray-900 text-white px-4 py-2 rounded text-sm font-semibold">Inquire Now</button>
                     </div>
                 </div>
             </div>
             <!-- Bike 3 -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition">
-                <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80" alt="Downhill Bike" class="h-64 w-full object-cover">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all group">
+                <div class="overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80" class="h-64 w-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold mb-2">Summit DH-9</h3>
                     <p class="text-gray-500 mb-4 text-sm">Professional grade downhill machine for podium finishes.</p>
-                    <div class="flex justify-between items-center">
+                    <div class="flex justify-between items-center pt-4 border-t border-gray-50">
                         <span class="text-2xl font-bold">$7,850</span>
                         <button onclick="openLeadModal('Summit DH-9')" class="bg-gray-900 text-white px-4 py-2 rounded text-sm font-semibold">Inquire Now</button>
                     </div>
@@ -97,114 +101,186 @@
         </div>
     </section>
 
+    <!-- NEW SECTION: THE CRAFT -->
+    <section id="craft" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=600&q=80" class="rounded-2xl shadow-lg mt-8">
+                    <img src="https://images.unsplash.com/photo-1533561052604-c3eba6dbf9bc?auto=format&fit=crop&w=600&q=80" class="rounded-2xl shadow-lg">
+                </div>
+                <div>
+                    <span class="text-blue-600 font-bold uppercase tracking-widest text-sm">Engineering Excellence</span>
+                    <h2 class="text-4xl font-bold mt-4 mb-6 leading-tight">Born in the workshop. <br>Proven on the trail.</h2>
+                    <p class="text-gray-600 mb-8 leading-relaxed text-lg">Every Velociti frame is hand-layered with aerospace-grade carbon fiber. We don't just build bikes; we build instruments of precision. </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-50 p-3 rounded-lg text-blue-600"><i class="fas fa-microchip"></i></div>
+                            <div>
+                                <h4 class="font-bold">Smart-Sync Drivetrain</h4>
+                                <p class="text-gray-500 text-sm">Seamless electronic shifting that learns your cadence.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-50 p-3 rounded-lg text-blue-600"><i class="fas fa-weight-hanging"></i></div>
+                            <div>
+                                <h4 class="font-bold">Ultra-Light Geometry</h4>
+                                <p class="text-gray-500 text-sm">Our 2026 frames are 15% lighter without sacrificing rigidity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Service Section -->
-    <section id="service" class="bg-gray-900 text-white py-20">
+    <section id="service" class="bg-gray-900 text-white py-24">
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
             <div>
                 <h2 class="text-4xl font-bold mb-6">Expert Repair & Maintenance</h2>
-                <p class="text-gray-400 mb-8 leading-relaxed">Stop the email back-and-forth. Our professional mechanics use a specialized intake system.</p>
+                <p class="text-gray-400 mb-8 leading-relaxed">Stop the email back-and-forth. Our professional mechanics use a specialized intake system directly connected to our service desk.</p>
                 <ul class="space-y-4 text-blue-400">
                     <li class="flex items-center gap-3"><i class="fas fa-check-circle"></i> Certified Suspension Tuning</li>
                     <li class="flex items-center gap-3"><i class="fas fa-check-circle"></i> Electronic Drivetrain Diagnostics</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-check-circle"></i> Real-time SLA Tracking</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check-circle"></i> Real-time CRM Ticket Generation</li>
                 </ul>
             </div>
             <div class="bg-white text-gray-900 p-8 rounded-2xl shadow-2xl">
                 <h3 class="text-2xl font-bold mb-6">Book Service Ticket</h3>
                 <form class="space-y-4">
                     <div class="grid grid-cols-2 gap-4">
-                        <input type="text" placeholder="First Name" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500">
-                        <input type="text" placeholder="Last Name" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                        <input type="text" placeholder="First Name" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <input type="text" placeholder="Last Name" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
                     </div>
-                    <select class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                    <select class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white">
                         <option>Select Issue Type</option>
                         <option>Suspension Overhaul</option>
                         <option>Drivetrain Adjustment</option>
+                        <option>Brake Bleed Service</option>
                     </select>
-                    <textarea placeholder="Describe the issue..." class="w-full p-3 border rounded-lg h-32"></textarea>
-                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition">Generate Service Ticket</button>
+                    <textarea placeholder="Describe the issue with your ride..." class="w-full p-3 border border-gray-200 rounded-lg h-32 focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition">Initialize Service Request</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Modal with Salesforce Form -->
-    <div id="leadModal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-[100] p-4">
+    <!-- NEW SECTION: SERVICE TRACKER (TRACKING) -->
+    <section id="portal" class="py-24 bg-gray-50 border-b">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="bg-white p-12 rounded-3xl shadow-sm border border-gray-100">
+                <div class="mb-8">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl shadow-lg">
+                        <i class="fas fa-search-location"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold">Track Your Service Status</h2>
+                    <p class="text-gray-500 mt-2">Enter your ticket number to see real-time progress of your bike.</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row gap-4">
+                    <input type="text" placeholder="e.g. VEL-99231" class="flex-grow p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none font-mono text-center md:text-left">
+                    <button class="bg-gray-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-black transition flex items-center justify-center gap-2">
+                        Track Progress <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="mt-8 pt-8 border-t border-gray-100 grid grid-cols-3 gap-4 text-sm font-medium">
+                    <div class="text-gray-400"><i class="fas fa-tools mr-2"></i> Intake</div>
+                    <div class="text-gray-400"><i class="fas fa-wrench mr-2"></i> In-Progress</div>
+                    <div class="text-gray-400"><i class="fas fa-flag-checkered mr-2"></i> Ready</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: TESTIMONIALS -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-center text-3xl font-bold mb-16 italic">"The Apex Carbon changed how I climb. It's almost cheating."</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=150" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+                    <h5 class="font-bold">Sarah Jenkins</h5>
+                    <p class="text-gray-400 text-xs uppercase tracking-widest">XC Pro Rider</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+                    <h5 class="font-bold">Markus Veld</h5>
+                    <p class="text-gray-400 text-xs uppercase tracking-widest">Enduro National Champ</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+                    <h5 class="font-bold">Julian Carter</h5>
+                    <p class="text-gray-400 text-xs uppercase tracking-widest">MTB Journalist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Modal (Plumbing Preserved) -->
+    <div id="leadModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-[100] p-4 backdrop-blur-sm">
         <div class="bg-white max-w-lg w-full p-8 rounded-2xl relative shadow-2xl">
-            <!-- Close Button -->
             <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition text-xl">
                 <i class="fas fa-times"></i>
             </button>
-
-            <!-- Header -->
             <div class="mb-6">
                 <h3 class="text-2xl font-bold text-gray-900">Inquire About a Bike</h3>
                 <p id="modalBikeName" class="text-blue-600 font-medium mb-1"></p>
-                <p class="text-sm text-gray-500">Submit your details and our team will reach out.</p>
+                <p class="text-sm text-gray-500">Submit your details and our team will reach out via Salesforce.</p>
             </div>
-
-            <!-- Salesforce Form -->
-            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgK00000O89jR" method="POST" onsubmit="timestamp()">
-                <!input type="hidden" name='captcha_settings' value='{"keyname":"velociti","fallback":"true","orgId":"00DgK00000O89jR","ts":""}'>
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgK00000O89jR" method="POST">
                 <input type="hidden" name="oid" value="00DgK00000O89jR">
-                <input type="hidden" name="retURL" value="https://velociti-bikes.github.io/thank-you">
-
+                <input type="hidden" name="retURL" value="https://velociti-bikes.github.io/">
                 <div class="space-y-4">
                     <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label for="first_name" class="block text-xs font-semibold text-gray-400 uppercase mb-1">First Name</label>
-                            <input id="first_name" name="first_name" type="text" maxlength="40" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition">
-                        </div>
-                        <div>
-                            <label for="last_name" class="block text-xs font-semibold text-gray-400 uppercase mb-1">Last Name</label>
-                            <input id="last_name" name="last_name" type="text" maxlength="80" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition">
-                        </div>
+                        <input name="first_name" type="text" placeholder="First Name" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <input name="last_name" type="text" placeholder="Last Name" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
                     </div>
-
-                    <div>
-                        <label for="email" class="block text-xs font-semibold text-gray-400 uppercase mb-1">Email Address</label>
-                        <input id="email" name="email" type="email" maxlength="80" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition">
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label for="city" class="block text-xs font-semibold text-gray-400 uppercase mb-1">City</label>
-                            <input id="city" name="city" type="text" maxlength="40" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition">
-                        </div>
-                        <div>
-                            <label for="country_code" class="block text-xs font-semibold text-gray-400 uppercase mb-1">Country</label>
-                            <select id="country_code" name="country_code" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition appearance-none">
-                                <option value="ZW">Zimbabwe</option>
-                                <option value="US">United States</option>
-                                <option value="GB">United Kingdom</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-center py-2">
-                        <!div class="g-recaptcha" data-sitekey="6Lch8t8sAAAAAPaXT7Mbf9n0syAWTax0B16ysVfK"></div>
-                    </div>
-
-                    <button type="submit" name="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition shadow-lg">
-                        Send to Sales Team
-                    </button>
+                    <input name="email" type="email" placeholder="Email Address" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    <select name="country_code" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg outline-none">
+                        <option value="ZW">Zimbabwe</option>
+                        <option value="US">United States</option>
+                        <option value="GB">United Kingdom</option>
+                    </select>
+                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition shadow-lg">Send Inquiry</button>
                 </div>
             </form>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-white border-t py-12 text-center text-gray-500">
-        <p>&copy; 2026 Velociti Bikes. All rights reserved.</p>
+    <footer class="bg-white border-t py-20 px-4">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-12">
+            <div class="col-span-2">
+                <span class="text-2xl font-bold tracking-tighter text-blue-600">VELOCITI<span class="text-gray-900">BIKES</span></span>
+                <p class="text-gray-500 mt-4 max-w-sm">Premium mountain bikes and professional repair services. Based in Harare, Zimbabwe.</p>
+            </div>
+            <div>
+                <h6 class="font-bold mb-4 uppercase text-xs tracking-widest">Connect</h6>
+                <div class="flex space-x-4 text-xl">
+                    <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-strava"></i></a>
+                </div>
+            </div>
+            <div>
+                <h6 class="font-bold mb-4 uppercase text-xs tracking-widest">Newsletter</h6>
+                <div class="flex">
+                    <input type="text" placeholder="Email" class="bg-gray-100 p-2 rounded-l-md w-full outline-none">
+                    <button class="bg-gray-900 text-white p-2 rounded-r-md"><i class="fas fa-paper-plane px-2"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-gray-400 text-sm border-t pt-8">
+            <p>&copy; 2026 Velociti Bikes. All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
         function openLeadModal(bikeName) {
-            // Ensure the element exists before setting text
             const nameDisplay = document.getElementById('modalBikeName');
-            if(nameDisplay) {
-                nameDisplay.innerText = "Model: " + bikeName;
-            }
+            if(nameDisplay) { nameDisplay.innerText = "Model: " + bikeName; }
             document.getElementById('leadModal').style.display = 'flex';
         }
         function closeLeadModal() {
