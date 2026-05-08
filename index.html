@@ -10,8 +10,17 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1532298229144-0ee0c975fe32?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; }
+        
+        /* NEW HERO IMAGE: Epic Mountain Range */
+        .hero-gradient { 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80'); 
+            background-size: cover; 
+            background-position: center; 
+        }
+        
         .parallax-section { background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; }
+        .text-shadow-lg { text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -37,13 +46,13 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero-gradient h-[80vh] flex items-center justify-center text-center text-white px-4">
-        <div class="max-w-3xl">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6">Elevate Your Ride.</h1>
-            <p class="text-xl md:text-2xl mb-8 font-light">Premium mountain bikes and world-class technical service for the serious rider.</p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#bikes" class="bg-white text-gray-900 px-8 py-4 rounded-md font-bold hover:bg-gray-100 transition">Shop MTB Collection</a>
-                <a href="#service" class="bg-blue-600 text-white px-8 py-4 rounded-md font-bold hover:bg-blue-700 transition">Schedule Professional Service</a>
+    <header class="hero-gradient h-[85vh] flex items-center justify-center text-center text-white px-4">
+        <div class="max-w-4xl">
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 text-shadow-lg tracking-tight">Elevate Your Ride.</h1>
+            <p class="text-xl md:text-2xl mb-10 font-light text-shadow-lg max-w-2xl mx-auto">Premium mountain bikes and world-class technical service for the serious rider.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="#bikes" class="bg-white text-gray-900 px-10 py-4 rounded-full font-bold hover:bg-gray-100 transition shadow-xl">Shop MTB Collection</a>
+                <a href="#service" class="bg-blue-600 text-white px-10 py-4 rounded-full font-bold hover:bg-blue-700 transition shadow-xl">Schedule Professional Service</a>
             </div>
         </div>
     </header>
@@ -56,42 +65,44 @@
         </div>
         
         <div class="grid md:grid-cols-3 gap-8">
-            <!-- Bike 1 -->
+            <!-- Bike 1: Velociti Apex Carbon (REPLACED IMAGE) -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all group">
                 <div class="overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1576433734880-9a5732228e72?auto=format&fit=crop&w=800&q=80" class="h-64 w-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1533561052604-c3eba6dbf9bc?auto=format&fit=crop&w=800&q=80" class="h-72 w-full object-cover group-hover:scale-105 transition duration-500" alt="Velociti Apex Carbon">
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold mb-2">Velociti Apex Carbon</h3>
-                    <p class="text-gray-500 mb-4 text-sm">Full-suspension Enduro beast with wireless shifting.</p>
+                    <p class="text-gray-500 mb-4 text-sm">Full-suspension Enduro beast with wireless shifting and aerospace-grade frame.</p>
                     <div class="flex justify-between items-center pt-4 border-t border-gray-50">
                         <span class="text-2xl font-bold">$6,499</span>
                         <button onclick="openLeadModal('Apex Carbon')" class="bg-gray-900 text-white px-4 py-2 rounded text-sm font-semibold">Inquire Now</button>
                     </div>
                 </div>
             </div>
+            
             <!-- Bike 2 -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all group">
                 <div class="overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1596738141905-51e94b519d69?auto=format&fit=crop&w=800&q=80" class="h-64 w-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1596738141905-51e94b519d69?auto=format&fit=crop&w=800&q=80" class="h-72 w-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold mb-2">Trailblazer Pro</h3>
-                    <p class="text-gray-500 mb-4 text-sm">The ultimate all-rounder for cross-country exploration.</p>
+                    <p class="text-gray-500 mb-4 text-sm">The ultimate all-rounder for cross-country exploration and technical climbs.</p>
                     <div class="flex justify-between items-center pt-4 border-t border-gray-50">
                         <span class="text-2xl font-bold">$4,200</span>
                         <button onclick="openLeadModal('Trailblazer Pro')" class="bg-gray-900 text-white px-4 py-2 rounded text-sm font-semibold">Inquire Now</button>
                     </div>
                 </div>
             </div>
+            
             <!-- Bike 3 -->
             <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all group">
                 <div class="overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80" class="h-64 w-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80" class="h-72 w-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold mb-2">Summit DH-9</h3>
-                    <p class="text-gray-500 mb-4 text-sm">Professional grade downhill machine for podium finishes.</p>
+                    <p class="text-gray-500 mb-4 text-sm">Professional grade downhill machine built for high speed and massive drops.</p>
                     <div class="flex justify-between items-center pt-4 border-t border-gray-50">
                         <span class="text-2xl font-bold">$7,850</span>
                         <button onclick="openLeadModal('Summit DH-9')" class="bg-gray-900 text-white px-4 py-2 rounded text-sm font-semibold">Inquire Now</button>
@@ -101,13 +112,13 @@
         </div>
     </section>
 
-    <!-- NEW SECTION: THE CRAFT -->
+    <!-- THE CRAFT -->
     <section id="craft" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div class="grid grid-cols-2 gap-4">
-                    <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=600&q=80" class="rounded-2xl shadow-lg mt-8">
-                    <img src="https://images.unsplash.com/photo-1533561052604-c3eba6dbf9bc?auto=format&fit=crop&w=600&q=80" class="rounded-2xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=600&q=80" class="rounded-2xl shadow-lg mt-8" alt="Workshop">
+                    <img src="https://images.unsplash.com/photo-1444491741275-3747c53c99b4?auto=format&fit=crop&w=600&q=80" class="rounded-2xl shadow-lg" alt="MTB Forest Trail">
                 </div>
                 <div>
                     <span class="text-blue-600 font-bold uppercase tracking-widest text-sm">Engineering Excellence</span>
@@ -139,7 +150,7 @@
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
             <div>
                 <h2 class="text-4xl font-bold mb-6">Expert Repair & Maintenance</h2>
-                <p class="text-gray-400 mb-8 leading-relaxed">Stop the email back-and-forth. Our professional mechanics use a specialized intake system directly connected to our service desk.</p>
+                <p class="text-gray-400 mb-8 leading-relaxed">Stop the email back-and-forth. Our professional mechanics use a specialized intake system directly connected to our Salesforce service desk.</p>
                 <ul class="space-y-4 text-blue-400">
                     <li class="flex items-center gap-3"><i class="fas fa-check-circle"></i> Certified Suspension Tuning</li>
                     <li class="flex items-center gap-3"><i class="fas fa-check-circle"></i> Electronic Drivetrain Diagnostics</li>
@@ -166,7 +177,7 @@
         </div>
     </section>
 
-    <!-- NEW SECTION: SERVICE TRACKER (TRACKING) -->
+    <!-- SERVICE TRACKER -->
     <section id="portal" class="py-24 bg-gray-50 border-b">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <div class="bg-white p-12 rounded-3xl shadow-sm border border-gray-100">
@@ -194,31 +205,7 @@
         </div>
     </section>
 
-    <!-- NEW SECTION: TESTIMONIALS -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-center text-3xl font-bold mb-16 italic">"The Apex Carbon changed how I climb. It's almost cheating."</h2>
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="text-center">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=150" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
-                    <h5 class="font-bold">Sarah Jenkins</h5>
-                    <p class="text-gray-400 text-xs uppercase tracking-widest">XC Pro Rider</p>
-                </div>
-                <div class="text-center">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
-                    <h5 class="font-bold">Markus Veld</h5>
-                    <p class="text-gray-400 text-xs uppercase tracking-widest">Enduro National Champ</p>
-                </div>
-                <div class="text-center">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
-                    <h5 class="font-bold">Julian Carter</h5>
-                    <p class="text-gray-400 text-xs uppercase tracking-widest">MTB Journalist</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lead Modal (Plumbing Preserved) -->
+    <!-- Lead Modal -->
     <div id="leadModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-[100] p-4 backdrop-blur-sm">
         <div class="bg-white max-w-lg w-full p-8 rounded-2xl relative shadow-2xl">
             <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition text-xl">
@@ -259,9 +246,9 @@
             <div>
                 <h6 class="font-bold mb-4 uppercase text-xs tracking-widest">Connect</h6>
                 <div class="flex space-x-4 text-xl">
-                    <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-strava"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-600 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-600 transition"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-blue-600 transition"><i class="fab fa-strava"></i></a>
                 </div>
             </div>
             <div>
