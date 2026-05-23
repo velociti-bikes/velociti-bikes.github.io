@@ -146,36 +146,56 @@
     </section>
 
     <!-- Service Section -->
-    <section id="service" class="bg-gray-900 text-white py-24">
-        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-4xl font-bold mb-6">Expert Repair & Maintenance</h2>
-                <p class="text-gray-400 mb-8 leading-relaxed">Stop the email back-and-forth. Our professional mechanics use a specialized intake system directly connected to our Salesforce service desk.</p>
-                <ul class="space-y-4 text-blue-400">
-                    <li class="flex items-center gap-3"><i class="fas fa-check-circle"></i> Certified Suspension Tuning</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-check-circle"></i> Electronic Drivetrain Diagnostics</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-check-circle"></i> Real-time CRM Ticket Generation</li>
-                </ul>
-            </div>
-            <div class="bg-white text-gray-900 p-8 rounded-2xl shadow-2xl">
-                <h3 class="text-2xl font-bold mb-6">Book Service Ticket</h3>
-                <form class="space-y-4">
-                    <div class="grid grid-cols-2 gap-4">
-                        <input type="text" placeholder="First Name" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                        <input type="text" placeholder="Last Name" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                    </div>
-                    <select class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white">
-                        <option>Select Issue Type</option>
-                        <option>Suspension Overhaul</option>
-                        <option>Drivetrain Adjustment</option>
-                        <option>Brake Bleed Service</option>
-                    </select>
-                    <textarea placeholder="Describe the issue with your ride..." class="w-full p-3 border border-gray-200 rounded-lg h-32 focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
-                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition">Initialize Service Request</button>
-                </form>
-            </div>
+    <!-- Service Section -->
+<section id="service" class="bg-gray-900 text-white py-24">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+        <!-- Left Side: Copy -->
+        <div>
+            <h2 class="text-4xl font-bold mb-6">Expert Repair & Maintenance</h2>
+            <p class="text-gray-400 mb-8 leading-relaxed">Stop the email back-and-forth. Our professional mechanics use a specialized intake system directly connected to our Salesforce service desk.</p>
+            <ul class="space-y-4 text-blue-400">
+                <li class="flex items-center gap-3"><i class="fas fa-check-circle"></i> Certified Suspension Tuning</li>
+                <li class="flex items-center gap-3"><i class="fas fa-check-circle"></i> Electronic Drivetrain Diagnostics</li>
+                <li class="flex items-center gap-3"><i class="fas fa-check-circle"></i> Real-time CRM Ticket Generation</li>
+            </ul>
         </div>
-    </section>
+
+        <!-- Right Side: The Web-to-Case Form -->
+        <div class="bg-white text-gray-900 p-8 rounded-2xl shadow-2xl">
+            <h3 class="text-2xl font-bold mb-6">Book Service Ticket</h3>
+            
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DgK00000O89jR" method="POST">
+                <!-- Hidden Required Fields -->
+                <input type="hidden" name="orgid" value="00DgK00000O89jR">
+                <input type="hidden" name="retURL" value="https://velociti-bikes.github.io/">
+                <input type="hidden" id="external" name="external" value="1">
+
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input id="name" name="name" maxlength="80" type="text" placeholder="Full Name" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <input id="phone" name="phone" maxlength="40" type="tel" placeholder="Phone" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                    
+                    <input id="email" name="email" maxlength="80" type="email" placeholder="Email Address" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    
+                    <input id="subject" name="subject" maxlength="80" type="text" placeholder="Bike Model / Issue Summary" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+
+                    <select id="00NgK00003nv5Gh" name="00NgK00003nv5Gh" title="Product" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg outline-none text-gray-700">
+                        <option value="">--Select Your Bike--</option>
+                        <option value="GC1040">Velociti Apex Carbon</option>
+                        <option value="GC1060">Trailblazer Pro</option>
+                        <option value="GC3020">Summit DH-9</option>
+                        <!-- Add other options here -->
+                    </select>
+
+                    <textarea id="description" name="description" placeholder="Describe the issue with your ride..." required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg h-32 focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+                    
+                    <button type="submit" name="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition shadow-lg">Initialize Service Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 
     <!-- SERVICE TRACKER -->
     <section id="portal" class="py-24 bg-gray-50 border-b">
