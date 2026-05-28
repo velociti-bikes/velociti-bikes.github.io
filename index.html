@@ -145,7 +145,7 @@
         </div>
     </section>
 
-    <<!-- Service Section -->
+    <!-- Service Section -->
 <section id="service" class="bg-gray-900 text-white py-24">
     <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
         <!-- Left Side: Copy -->
@@ -187,15 +187,18 @@
                         <option value="Texas">Texas</option>
                         <option value="California">California</option>
                     </select>
-                    
-                    <input id="subject" name="subject" maxlength="80" type="text" placeholder="Bike Model / Issue Summary" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
 
-                    <select id="00NgK00003nv5Gh" name="00NgK00003nv5Gh" title="Product" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg outline-none text-gray-700">
-                        <option value="">--Select Your Bike--</option>
-                        <option value="GC1040">Velociti Apex Carbon</option>
-                        <option value="GC1060">Trailblazer Pro</option>
-                        <option value="GC3020">Summit DH-9</option>
-                    </select>
+                    <div class="grid grid-cols-2 gap-4">
+                        <input id="Serial_Number__c" name="Serial_Number__c" maxlength="80" type="text" placeholder="Serial Number" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <select id="00NgK00003nv5Gh" name="00NgK00003nv5Gh" title="Product" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg outline-none text-gray-700">
+                            <option value="">--Select Bike--</option>
+                            <option value="GC1040">Velociti Apex Carbon</option>
+                            <option value="GC1060">Trailblazer Pro</option>
+                            <option value="GC3020">Summit DH-9</option>
+                        </select>
+                    </div>
+                    
+                    <input id="subject" name="subject" maxlength="80" type="text" placeholder="Issue Summary" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
 
                     <textarea id="description" name="description" placeholder="Describe the issue..." required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg h-32 focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
                     
@@ -204,7 +207,7 @@
             </form>
         </div>
     </div>
-
+</section>
 </section>
 
     <!-- SERVICE TRACKER -->
