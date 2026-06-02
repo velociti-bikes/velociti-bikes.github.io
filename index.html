@@ -319,16 +319,6 @@ Velociti Bikes Premium MTB    <!-- Footer -->
         </div>
     </footer>
 
-    <script>
-        function openLeadModal(bikeName) {
-            const nameDisplay = document.getElementById('modalBikeName');
-            if(nameDisplay) { nameDisplay.innerText = "Model: " + bikeName; }
-            document.getElementById('leadModal').style.display = 'flex';
-        }
-        function closeLeadModal() {
-            document.getElementById('leadModal').style.display = 'none';
-        }
-    </script>
 <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
@@ -336,8 +326,8 @@ Velociti Bikes Premium MTB    <!-- Footer -->
 
 			embeddedservice_bootstrap.init(
 				'00DgK00000O89jR',
-				'Service_Agent_Channel',
-				'https://orgfarm-dc60fe3534-dev-ed.develop.my.site.com/ESWServiceAgentChannel1780149991593',
+				'Service_Agent_ESD',
+				'https://orgfarm-dc60fe3534-dev-ed.develop.my.site.com/ESWServiceAgentESD1780360160991',
 				{
 					scrt2URL: 'https://orgfarm-dc60fe3534-dev-ed.develop.my.salesforce-scrt.com'
 				}
@@ -347,8 +337,8 @@ Velociti Bikes Premium MTB    <!-- Footer -->
 		}
 	};
 </script>
-<script type='text/javascript' src='https://orgfarm-dc60fe3534-dev-ed.develop.my.site.com/ESWServiceAgentChannel1780149991593/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-
+<script type='text/javascript' src='https://orgfarm-dc60fe3534-dev-ed.develop.my.site.com/ESWServiceAgentESD1780360160991/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'>
+</script>
 	
 </body>
 </html>
