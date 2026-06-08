@@ -304,7 +304,7 @@
             <input type="hidden" name="lead_source" value="Web">
             
             <!-- This hidden field captures the bike type dynamically -->
-            <input type="hidden" name="Preferred_Bike_Type__c" id="modalBikeTypeInput" value="">
+            <input type="hidden" name="ProductInterest__c" id="modalBikeTypeInput" value="">
             
             <div class="space-y-4">
                 <div class="grid grid-cols-2 gap-4">
@@ -338,16 +338,18 @@
 
 <script>
     function openLeadModal(bikeName) {
-        const modal = document.getElementById('leadModal');
-        // Remove 'hidden' so it appears, add 'flex' to center it
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        
-        // Populate the UI and the hidden form input
-        document.getElementById('modalBikeName').innerText = "Inquiring about: " + bikeName;
-        document.getElementById('modalBikeTypeInput').value = bikeName;
-    }
+    const bikeTypeMap = {
+        'Velociti Apex Carbon': 'Velociti Apex Carbon',
+        'Trailblazer Pro': 'Trailblazer Pro',
+        'Summit DH-9': 'Summit DH-9'
+    };
 
+    document.getElementById('modalBikeName').textContent = bikeName;
+    document.getElementById('modalBikeTypeInput').value = bikeTypeMap[bikeName] || bikeName;
+
+    const modal = document.getElementById('leadModal');
+    modal.style.display = 'flex';
+}
     function closeLeadModal() {
         const modal = document.getElementById('leadModal');
         modal.classList.add('hidden');
