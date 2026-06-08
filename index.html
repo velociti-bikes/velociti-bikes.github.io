@@ -239,14 +239,13 @@
     </section>
 
     <!-- Lead Modal -->
-<div id="leadModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-[100] p-4 backdrop-blur-sm">
+<div id="leadModal" class="fixed inset-0 bg-black/60 items-center justify-center z-[100] p-4 backdrop-blur-sm" style="display: none;">
     <div class="bg-white max-w-lg w-full p-8 rounded-2xl relative shadow-2xl">
         <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition text-xl">
             <i class="fas fa-times"></i>
         </button>
         <div class="mb-6">
             <h3 class="text-2xl font-bold text-gray-900">Inquire About a Bike</h3>
-            <!-- This shows the user what they selected -->
             <p id="modalBikeName" class="text-blue-600 font-medium mb-1"></p>
             <p class="text-sm text-gray-500">Submit your details and our team will reach out via Salesforce.</p>
         </div>
@@ -254,8 +253,6 @@
             <input type="hidden" name="oid" value="00DgK00000O89jR">
             <input type="hidden" name="retURL" value="https://velociti-bikes.github.io/">
             <input type="hidden" name="lead_source" value="Web">
-            
-            <!-- Hidden field for Bike Type (will be set by JS) -->
             <input type="hidden" name="Preferred_Bike_Type__c" id="modalBikeTypeInput" value="">
             
             <div class="space-y-4">
@@ -263,12 +260,10 @@
                     <input name="first_name" type="text" placeholder="First Name" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
                     <input name="last_name" type="text" placeholder="Last Name" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
                 </div>
-
                 <div class="grid grid-cols-2 gap-4">
                     <input name="email" type="email" placeholder="Email" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
                     <input name="phone" type="tel" placeholder="Phone" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
                 </div>
-
                 <div class="grid grid-cols-2 gap-4">
                     <input name="company" type="text" placeholder="Company Name" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
                     <select name="Preferred_Contact_Method__c" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg outline-none text-gray-500">
@@ -277,7 +272,6 @@
                         <option value="Phone">Phone</option>
                     </select>
                 </div>
-                
                 <select name="Location__c" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg outline-none text-gray-500">
                     <option value="" disabled selected>Select your Territory</option>
                     <option value="New York">New York</option>
@@ -285,13 +279,11 @@
                     <option value="Texas">Texas</option>
                     <option value="California">California</option>
                 </select>
-
                 <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition shadow-lg">Send Inquiry</button>
             </div>
         </form>
     </div>
-</div>
-    
+</div>    
 Velociti Bikes Premium MTB    <!-- Footer -->
     <footer class="bg-white border-t py-20 px-4">
         <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-12">
